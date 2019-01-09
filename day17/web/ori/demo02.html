@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+    </style>
+    <script>
+        function faqingqiu(){
+            //1.创建核心引擎对象
+            xmlhttp=null;
+            if (window.XMLHttpRequest)
+            {// code for IE7, Firefox, Opera, etc.
+                xmlhttp=new XMLHttpRequest();
+            }
+            else if (window.ActiveXObject)
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            // 2.告知引擎对象 你帮我请求服务器 告知服务器返回数据 应该做啥
+            xmlhttp.onreadystatechange=function(){
+                if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                    //alert("我从服务器回来了")
+                    //alert(xmlhttp.responseText)
+                    document.getElementById("msg").innerHTML=xmlhttp.responseText;
+                }
+            }
+            // 3.告知引擎对象 请求的地址和参数
+            xmlhttp.open("post","http://localhost/ajaxtest")
+            //告知引擎以这种方式发送请求
+            xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded")
+
+            //4.告知引擎对象 发请求
+            xmlhttp.send("username=xiaoming");
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="submit" id="p1" onclick="faqingqiu()" value="点我"> <span id="msg"></span>
+
+</body>
+</html>

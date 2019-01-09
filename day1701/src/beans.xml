@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean name="UserDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>
+    <bean name="UserService" class="com.itheima.service.impl.UserServiceImpl"></bean>
+
+
+    <bean name="KWDao" class="com.itheima.dao.impl.KWDaoImpl"></bean>
+    <bean name="KWService" class="com.itheima.service.impl.KWServiceImpl"></bean>
+</beans>

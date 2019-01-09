@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script>
+    function fz(obj) {
+        var url= "http://localhost/ajaxyz";
+
+        $.get(url,"username="+obj.value,function (data,statuscode,xhr) {
+
+            if (data==1) {
+                $("#msg").html("用户名不可用").css("background-color","red");
+            }else if (data==0){
+                $("#msg").html("用户名可用").css("background-color","green");
+            }
+
+
+
+
+        })
+    }
+
+
+    </script>
+</head>
+<body>
+用户名:<input type="text" name="username" onblur="fz(this)"><span id="msg"></span><br>
+密码:<input type="password" name="password"><br>
+邮箱:<input type="text" name="email"><br>
+</body>
+</html>

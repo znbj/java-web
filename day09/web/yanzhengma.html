@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function changeimg(obj) {
+            obj.src="/code?t="+new Date().getTime();
+        }
+        
+    </script>
+    <title>Title</title>
+</head>
+<body>
+我是验证码<img src="/code" onclick="changeimg(this)" >
+</body>
+</html>
